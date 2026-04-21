@@ -4,11 +4,9 @@ export default function About() {
       <div className="container twoCol">
         <div>
           <p className="sectionLabel">Biz haqimizda</p>
-          <h2>Nega aynan bizni tanlashadi?</h2>
+          <h2>Nega aynan bizni tanlashingiz kerak?</h2>
           <p className="sectionText">
-            Bizning avto maktab nazariy bilimni yodlashga emas, tushunishga
-            o'rgatadi. Amaliyotda esa o'quvchi real ko'cha sharoitida o'zini
-            erkin tutishi uchun bosqichma-bosqich tizim qo'llanadi.
+            Bizning avto maktabimizda 
           </p>
           <p className="sectionText">
             Kurs davomida ichki testlar, individual murabbiy yondashuvi va

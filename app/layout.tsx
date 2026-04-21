@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TurboDrive Avto Maktab",
+  title: "BEKZOD PRAVA",
   description:
-    "TurboDrive Avto Maktab uchun zamonaviy, ishonchli va konversiyaga yo'naltirilgan landing page.",
+    "BEKZOD PRAVA kafolatlangan nazariy imtihonga tayyorlov kurslari page.",
 };
 
 export default function RootLayout({
@@ -18,3 +18,4 @@ export default function RootLayout({
     </html>
   );
 }
+
