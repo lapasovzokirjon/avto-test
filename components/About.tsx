@@ -6,7 +6,7 @@ export default function About() {
           <p className="sectionLabel">Biz haqimizda</p>
           <h2>Nega aynan bizni tanlashingiz kerak?</h2>
           <p className="sectionText">
-            Bizning avto maktabimizda 
+            Bizning avto maktabimizda 12 yillik tajribaga ega bo'lgan yo'l harakati qoidalari mutaxassislar dars berishadi, shu vaqtgacha 90% o'quvchilarimiz prava nazariy imtihondan o'tishmoqda. Darslarimiz sizga ma'qul kelmasa pulingizni 100% qaytarib beramiz!
           </p>
           <p className="sectionText">
             Kurs davomida ichki testlar, individual murabbiy yondashuvi va

@@ -6,11 +6,9 @@ export default function Hero() {
       <div className="container heroGrid">
         <div>
           <span className="badge">Yangi guruhga qabul boshlandi</span>
-          <h1>Haydovchilikni ishonch bilan o'rganing</h1>
+          <h1>Darslarimiz ma'qul kelmasa pulingizni qaytarib beramiz!</h1>
           <p className="lead">
-            TurboDrive Avto Maktab sizga nazariya, amaliyot va imtihonga
-            tayyorlovni bitta tizimda beradi. Maqsadimiz — sizni faqat guvohnoma
-            olishgacha emas, real hayotda xavfsiz haydashgacha olib chiqish.
+            BEKZOD PRAVA kafolatlangan prava nazariy imtihonga tayyorlov kursi.
           </p>
 
           <div className="heroActions">
@@ -24,11 +22,11 @@ export default function Hero() {
 
           <div className="heroCards">
             <div className="miniCard">
-              <strong>Avtomat / Mexanika</strong>
+              <strong>Express kurslar</strong>
               <span>Ikkala format mavjud</span>
             </div>
             <div className="miniCard">
-              <strong>Ertalab / Kechqurun</strong>
+              <strong>Avto maktab guvohnomasi uchun kurslari</strong>
               <span>Moslashuvchan jadval</span>
             </div>
           </div>
