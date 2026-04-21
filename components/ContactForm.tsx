@@ -18,7 +18,8 @@ const initialForm: FormData = {
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>(initialForm);
-  const [success, setSuccess] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -27,18 +28,43 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setMessage("");
 
     const filled = Object.values(form).every((value) => value.trim().length > 0);
 
     if (!filled) {
-      setSuccess("Iltimos, barcha maydonlarni to'ldiring.");
+      setMessage("Iltimos, barcha maydonlarni to'ldiring.");
       return;
     }
 
-    setSuccess("Rahmat! So'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.");
-    setForm(initialForm);
+    try {
+      setLoading(true);
+
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Xatolik yuz berdi");
+      }
+
+      setMessage("Rahmat! So'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.");
+      setForm(initialForm);
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Xatolik yuz berdi";
+      setMessage(errorMessage);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -102,11 +128,11 @@ export default function ContactForm() {
             />
           </label>
 
-          <button type="submit" className="primaryBtn fullBtn">
-            Yuborish
+          <button type="submit" className="primaryBtn fullBtn" disabled={loading}>
+            {loading ? "Yuborilmoqda..." : "Yuborish"}
           </button>
 
-          {success ? <p className="formMessage">{success}</p> : null}
+          {message ? <p className="formMessage">{message}</p> : null}
         </form>
       </div>
     </section>
