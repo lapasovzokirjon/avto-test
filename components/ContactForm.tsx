@@ -16,6 +16,18 @@ const initialForm: FormData = {
   age: "",
 };
 
+const getUTMParams = () => {
+  const params = new URLSearchParams(window.location.search);
+
+  return {
+    utm_source: params.get("utm_source") || "",
+    utm_medium: params.get("utm_medium") || "",
+    utm_campaign: params.get("utm_campaign") || "",
+    utm_content: params.get("utm_content") || "",
+    utm_term: params.get("utm_term") || "",
+  };
+};
+
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [message, setMessage] = useState<string>("");
@@ -28,44 +40,49 @@ export default function ContactForm() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setMessage("");
+const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+  setMessage("");
 
-    const filled = Object.values(form).every((value) => value.trim().length > 0);
+  const filled = Object.values(form).every((value) => value.trim().length > 0);
 
-    if (!filled) {
-      setMessage("Iltimos, barcha maydonlarni to'ldiring.");
-      return;
+  if (!filled) {
+    setMessage("Iltimos, barcha maydonlarni to'ldiring.");
+    return;
+  }
+
+  try {
+    setLoading(true);
+
+    const response = await fetch("/api/lead", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(form),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.message ||
+          data.error ||
+          data.telegramError?.description ||
+          "Xatolik yuz berdi"
+      );
     }
 
-    try {
-      setLoading(true);
-
-      const response = await fetch("/api/lead", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Xatolik yuz berdi");
-      }
-
-      setMessage("Rahmat! So'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.");
-      setForm(initialForm);
-    } catch (error) {
-      const errorMessage =
-        error instanceof Error ? error.message : "Xatolik yuz berdi";
-      setMessage(errorMessage);
-    } finally {
-      setLoading(false);
-    }
-  };
+    setMessage("Rahmat! So'rovingiz qabul qilindi. Tez orada siz bilan bog'lanamiz.");
+    setForm(initialForm);
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Xatolik yuz berdi";
+    setMessage(errorMessage);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section className="section contactSection" id="contact">

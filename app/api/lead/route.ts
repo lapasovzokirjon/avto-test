@@ -5,13 +5,28 @@ type LeadData = {
   phone: string;
   address: string;
   age: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
+  utm_term?: string;
 };
 
 export async function POST(req: Request) {
   try {
     const body: LeadData = await req.json();
 
-    const { fullName, phone, address, age } = body;
+    const {
+      fullName,
+      phone,
+      address,
+      age,
+      utm_source,
+      utm_medium,
+      utm_campaign,
+      utm_content,
+      utm_term,
+    } = body;
 
     if (!fullName || !phone || !address || !age) {
       return NextResponse.json(
@@ -23,23 +38,51 @@ export async function POST(req: Request) {
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
-    if (!token || !chatId) {
+    if (!token) {
       return NextResponse.json(
-        {
-          success: false,
-          message: "Telegram sozlamalari topilmadi.",
-        },
+        { success: false, message: "TELEGRAM_BOT_TOKEN topilmadi." },
         { status: 500 }
       );
     }
 
-    const text = `
-<b>🚗 Yangi lead keldi</b>
+    if (!chatId) {
+      return NextResponse.json(
+        { success: false, message: "TELEGRAM_CHAT_ID topilmadi." },
+        { status: 500 }
+      );
+    }
 
-<b>👤 Ism familiya:</b> ${fullName}
-<b>📞 Telefon:</b> ${phone}
-<b>📍 Manzil:</b> ${address}
-<b>🎂 Yoshi:</b> ${age}
+    const now = new Date();
+
+    const formattedDate = now.toLocaleDateString("uz-UZ", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+
+    const formattedTime = now.toLocaleTimeString("uz-UZ", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    });
+
+    const text = `
+🚗 Yangi lead keldi
+
+👤 Ism familiya: ${fullName}
+📞 Telefon: ${phone}
+📍 Manzil: ${address}
+🎂 Yoshi: ${age}
+
+🗓 Sana: ${formattedDate}
+⏰ Soat: ${formattedTime}
+
+📊 UTM ma'lumotlari:
+utm_source: ${utm_source || "-"}
+utm_medium: ${utm_medium || "-"}
+utm_campaign: ${utm_campaign || "-"}
+utm_content: ${utm_content || "-"}
+utm_term: ${utm_term || "-"}
     `.trim();
 
     const telegramResponse = await fetch(
@@ -52,19 +95,22 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           chat_id: chatId,
           text,
-          parse_mode: "HTML",
         }),
       }
     );
 
     const telegramData = await telegramResponse.json();
 
-    if (!telegramData.ok) {
+    console.log("TELEGRAM STATUS:", telegramResponse.status);
+    console.log("TELEGRAM RESPONSE:", telegramData);
+
+    if (!telegramResponse.ok || !telegramData.ok) {
       return NextResponse.json(
         {
           success: false,
-          message: "Telegramga yuborishda xatolik yuz berdi.",
-          error: telegramData,
+          message: telegramData?.description || "Telegramga yuborilmadi.",
+          telegramStatus: telegramResponse.status,
+          telegramError: telegramData,
         },
         { status: 500 }
       );
@@ -75,6 +121,8 @@ export async function POST(req: Request) {
       message: "Lead muvaffaqiyatli yuborildi.",
     });
   } catch (error) {
+    console.error("API ERROR:", error);
+
     return NextResponse.json(
       {
         success: false,
