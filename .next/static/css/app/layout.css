@@ -1,0 +1,483 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./app/globals.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --bg: #0b1220;
+  --surface: #ffffff;
+  --surface-soft: #f4f7fb;
+  --text: #101828;
+  --text-light: #5b6475;
+  --primary: #1d4ed8;
+  --primary-dark: #173ea6;
+  --line: #dbe3ee;
+  --dark-card: #111827;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 88px 0;
+}
+
+.mutedSection {
+  background: var(--surface-soft);
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  -webkit-backdrop-filter: blur(18px);
+          backdrop-filter: blur(18px);
+  background: rgba(11, 18, 32, 0.86);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 0;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.desktopNav {
+  display: flex;
+  gap: 24px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+}
+
+.desktopNav a:hover {
+  color: #fff;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  padding: 14px 22px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.primaryBtn {
+  background: var(--primary);
+  color: #fff;
+}
+
+.primaryBtn:hover {
+  background: var(--primary-dark);
+}
+
+.secondaryBtn {
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: #fff;
+}
+
+.smallBtn {
+  padding: 12px 16px;
+}
+
+.hero {
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 34%),
+    linear-gradient(180deg, #0b1220 0%, #111b33 100%);
+  color: #fff;
+  padding-top: 72px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  grid-gap: 48px;
+  gap: 48px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 4.6rem);
+  line-height: 1.06;
+  margin-bottom: 18px;
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 640px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.heroCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.miniCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 16px 18px;
+  min-width: 210px;
+}
+
+.miniCard strong,
+.miniCard span {
+  display: block;
+}
+
+.miniCard span {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+.heroVisual {
+  display: flex;
+  justify-content: center;
+}
+
+.heroImageCard {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  padding: 18px;
+  box-shadow: 0 20px 60px rgba(2, 10, 30, 0.35);
+}
+
+.sectionLabel {
+  color: var(--primary);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.sectionText {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.twoCol,
+.contactGrid,
+.faqWrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  gap: 32px;
+  align-items: start;
+}
+
+.featureList,
+.cardGrid,
+.statsGrid,
+.faqList {
+  display: grid;
+  grid-gap: 18px;
+  gap: 18px;
+}
+
+.featureList {
+  grid-template-columns: 1fr 1fr;
+}
+
+.featureItem,
+.infoCard,
+.reviewCard,
+.statCard,
+.faqItem,
+.formCard,
+.contactNote {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px;
+}
+
+.featureItem h3,
+.infoCard h3,
+.statCard h3 {
+  margin-bottom: 10px;
+}
+
+.featureItem p,
+.infoCard p,
+.reviewCard p,
+.statCard p,
+.faqItem p {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.columnHead {
+  align-items: center;
+  text-align: center;
+}
+
+.maxText {
+  max-width: 520px;
+}
+
+.centerText {
+  margin: 0 auto;
+}
+
+.statsGrid,
+.threeCol {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.statsGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.statCard {
+  text-align: center;
+}
+
+.statCard h3 {
+  font-size: 2.2rem;
+  color: var(--primary);
+}
+
+.infoCard {
+  text-align: center;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: var(--primary-dark);
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 auto 18px;
+}
+
+.infoCard strong,
+.infoCard span {
+  display: block;
+}
+
+.infoCard span {
+  color: var(--text-light);
+  margin: 8px 0 10px;
+}
+
+.reviewCard {
+  background: var(--dark-card);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.reviewCard p,
+.reviewCard strong,
+.stars {
+  color: #fff;
+}
+
+.reviewCard p {
+  color: rgba(255, 255, 255, 0.82);
+  margin: 14px 0 18px;
+}
+
+.stars {
+  letter-spacing: 2px;
+}
+
+.faqItem summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem p {
+  margin-top: 14px;
+}
+
+.contactSection {
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+}
+
+.contactNote {
+  margin-top: 20px;
+  background: #eff6ff;
+}
+
+.formCard {
+  display: grid;
+  grid-gap: 16px;
+  gap: 16px;
+}
+
+.formCard label {
+  display: grid;
+  grid-gap: 8px;
+  gap: 8px;
+  font-weight: 700;
+}
+
+.formCard input,
+.formCard textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  outline: none;
+  background: #fff;
+}
+
+.formCard input:focus,
+.formCard textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+}
+
+.fullBtn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.formMessage {
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.footer {
+  background: #0b1220;
+  color: rgba(255, 255, 255, 0.82);
+  padding: 28px 0;
+}
+
+.footerWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (max-width: 980px) {
+  .heroGrid,
+  .twoCol,
+  .contactGrid,
+  .faqWrap,
+  .statsGrid,
+  .threeCol {
+    grid-template-columns: 1fr;
+  }
+
+  .featureList {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHead,
+  .footerWrap,
+  .nav {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .desktopNav {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 68px 0;
+  }
+
+  .heroActions {
+    flex-direction: column;
+  }
+
+  .desktopNav,
+  .smallBtn {
+    display: none;
+  }
+
+  .heroImageCard img {
+    width: 100%;
+    height: auto;
+  }
+}
+
