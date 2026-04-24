@@ -15,7 +15,7 @@ export default function About() {
         </div>
 
         <div className="featureList">
-          <div className="featureItem">
+          <div className="featureItem">ss
             <h3>Kuchli nazariy bilim</h3>
             <p>Prava imtihonida tushadigan savollarni 100% bilim berish orqali o'rgatamiz!.</p>
           </div>
