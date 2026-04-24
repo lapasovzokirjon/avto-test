@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="container footerWrap">
         <div>
           <strong>BEKZOD PRAVA</strong>
-          <p>Nazariy imtihondan bir urinishda o'ting!.</p>
+          <p>Darslarimiz sizga ma'qul kelmasa — pulingizni qaytaramiz.</p>
         </div>
         <p>© 2026 Barcha huquqlar himoyalangan.</p>
       </div>
