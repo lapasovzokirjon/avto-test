@@ -9,28 +9,27 @@ export default function About() {
             Bizning avto maktabimizda 12 yillik tajribaga ega bo'lgan yo'l harakati qoidalari mutaxassislar dars berishadi, shu vaqtgacha 90% o'quvchilarimiz prava nazariy imtihondan o'tishmoqda. Darslarimiz sizga ma'qul kelmasa pulingizni 100% qaytarib beramiz!
           </p>
           <p className="sectionText">
-            Kurs davomida ichki testlar, individual murabbiy yondashuvi va
-            imtihon oldi tayyorlov mavjud. O'quvchilarimiz orasida birinchi
-            urinishdayoq imtihondan o'tish ko'rsatkichi yuqori.
+                        Bizning avto maktabimizda 12 yillik tajribaga ega bo'lgan yo'l harakati qoidalari mutaxassislar dars berishadi, shu vaqtgacha 90% o'quvchilarimiz prava nazariy imtihondan o'tishmoqda. Darslarimiz sizga ma'qul kelmasa pulingizni 100% qaytarib beramiz!
+
           </p>
         </div>
 
         <div className="featureList">
           <div className="featureItem">
-            <h3>Kuchli nazariya</h3>
-            <p>Testlar, video tushuntirishlar va murakkab mavzularni sodda metodika.</p>
+            <h3>Kuchli nazariy bilim</h3>
+            <p>Prava imtihonida tushadigan savollarni 100% bilim berish orqali o'rgatamiz!.</p>
           </div>
           <div className="featureItem">
-            <h3>Real amaliyot</h3>
-            <p>Shahar ichida, parkovka va tirbandlikda haqiqiy mashg'ulotlar.</p>
+            <h3>Imtihon muhiti</h3>
+            <p>Imtihon muhitini beruvchi dars xonalari va testlar!.</p>
           </div>
           <div className="featureItem">
             <h3>Moslashuvchan jadval</h3>
-            <p>Ishlaydigan va o'qiydiganlar uchun qulay guruhlar mavjud.</p>
+            <p>Kunduzgi va kechgi guruhlarimiz mavjud.</p>
           </div>
           <div className="featureItem">
-            <h3>Natijaga fokus</h3>
-            <p>Bizning maqsad — sizni imtihondan va real yo'ldan o'tkaza olish.</p>
+            <h3>Natijaga kafolat</h3>
+            <p>Bizning maqsad — har bir o'quvchiga nafaqat imtihonda balki hayotda ham kerakli bo'ladigan yo'l harakat qoidalarini o'rgatamiz, agar darslarimiz ma'qul kelmasa pulingizni 100% qaytaribberamiz!.</p>
           </div>
         </div>
       </div>

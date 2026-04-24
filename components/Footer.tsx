@@ -3,8 +3,8 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footerWrap">
         <div>
-          <strong>TurboDrive Avto Maktab</strong>
-          <p>Xavfsiz haydovga birinchi qadam shu yerdan boshlanadi.</p>
+          <strong>BEKZOD PRAVA</strong>
+          <p>Nazariy imtihondan bir urinishda o'ting!.</p>
         </div>
         <p>© 2026 Barcha huquqlar himoyalangan.</p>
       </div>
