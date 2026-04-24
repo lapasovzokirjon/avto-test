@@ -4,7 +4,8 @@ export default function Footer() {
       <div className="container footerWrap">
         <div>
           <strong>BEKZOD PRAVA</strong>
-          <p>Darslarimiz sizga ma'qul kelmasa — pulingizni qaytaramiz.</p>
+          <p>Darslarimiz sizga ma'qul kelmasa — pulingizni qaytaramiz!
+          .</p>90% o'quvchilarimiz muvaffaqiyatli topshirgan
         </div>
         <p>© 2026 Barcha huquqlar himoyalangan.</p>
       </div>
