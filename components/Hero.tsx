@@ -6,7 +6,7 @@ export default function Hero() {
       <div className="container heroGrid">
         <div>
           <span className="badge">Yangi guruhga oxirgi joylar qoldi
-          <h1>Darslarimiz sizga ma’qul kelmasa — pulingizni qaytaramiz
+          <h1>Darslarimiz sizga ma'ul kelmasa — pulingizni qaytaramiz
           <p className="lead">
             BEKZOD PRAVA kafolatlangan prava nazariy imtihonga tayyorlov kursi.
           </p>
