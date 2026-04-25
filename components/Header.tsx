@@ -3,7 +3,7 @@ export default function Header() {
     <header className="header">
       <div className="container nav">
         <a href="#home" className="logo">
-          TurboDrive
+          Bekzod Prava
         </a>
 
         <nav className="desktopNav">

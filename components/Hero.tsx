@@ -5,8 +5,8 @@ export default function Hero() {
     <section className="hero section" id="home">
       <div className="container heroGrid">
         <div>
-          <span className="badge">Yangi guruhga oxirgi joylar qoldi
-          <h1>Darslarimiz sizga ma'ul kelmasa — pulingizni qaytaramiz
+          <span className="badge">Yangi guruhga oxirgi joylar qoldi</span>
+          <h1>Darslarimiz sizga ma'ul kelmasa — pulingizni qaytaramiz</h1>
           <p className="lead">
             BEKZOD PRAVA kafolatlangan prava nazariy imtihonga tayyorlov kursi.
           </p>
@@ -23,11 +23,11 @@ export default function Hero() {
           <div className="heroCards">
             <div className="miniCard">
               <strong>Express kurslar</strong>
-              <span>Kunduzgi va kechgi guruhlar
+              <span>Kunduzgi va kechgi guruhlar</span>
             </div>
             <div className="miniCard">
-              <strong>Avto maktab guvohnomasi uchun kurslar/strong>
-              <span>Moslashuvchan vaqtda o'qish!
+              <strong>Avto maktab guvohnomasi uchun kurslar</strong>
+              <span>Moslashuvchan vaqtda o'qish!,</span>
             </div>
           </div>
         </div>
